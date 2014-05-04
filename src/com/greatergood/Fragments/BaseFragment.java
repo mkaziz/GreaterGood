@@ -1,12 +1,14 @@
 package com.greatergood.Fragments;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.greatergood.R;
+import com.greatergood.Activities.PreferencesActivity;
 
 public class BaseFragment extends Fragment {
 
@@ -26,7 +28,8 @@ public class BaseFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
         case R.id.action_settings:
-            // start settings activity
+            Intent i = new Intent(getActivity(), PreferencesActivity.class);
+            startActivity(i);
             break;
         default:
             break;

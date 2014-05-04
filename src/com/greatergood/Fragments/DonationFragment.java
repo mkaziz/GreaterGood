@@ -19,7 +19,9 @@ import com.greatergood.services.DonationService;
 public class DonationFragment extends BaseFragment {
 
     private Button btnDonation;
-    private int donationAmount;
+    private int donationAmountInDollars;
+
+    private int DOLLARS_TO_CENTS_MULTIPLIER = 100;
 
     public static DonationFragment createInstance() {
         return new DonationFragment();
@@ -32,7 +34,7 @@ public class DonationFragment extends BaseFragment {
 
     private void onDonationAmountChanged(int dollarAmount) {
         btnDonation.setText("Donate $" + Integer.toString(dollarAmount));
-        donationAmount = dollarAmount;
+        donationAmountInDollars = dollarAmount;
 
     }
 
@@ -48,12 +50,15 @@ public class DonationFragment extends BaseFragment {
             @Override
             public void onClick(View arg0) {
                 Donation donation = Donation.CreateDonation(
-                        donationAmount * 100, 1, 1);
+                        donationAmountInDollars * DOLLARS_TO_CENTS_MULTIPLIER,
+                        1, 1);
 
                 DonationService.SaveDonation(donation);
 
-                Toast.makeText(getActivity(),
-                        "Donated: $" + Integer.toString(donationAmount),
+                Toast.makeText(
+                        getActivity(),
+                        "Donated: $"
+                                + Integer.toString(donationAmountInDollars),
                         Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(getActivity(), ConfirmationActivity.class);
                 startActivity(i);

@@ -33,7 +33,6 @@
             android:label="@string/title_activity_donation" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -44,6 +43,10 @@
         <activity
             android:name="com.greatergood.Activities.ConfirmationActivity"
             android:label="@string/title_activity_confirmation" >
+        </activity>
+        <activity
+            android:name="com.greatergood.Activities.PreferencesActivity"
+            android:label="@string/title_activity_preferences"  >
         </activity>
     </application>
 
