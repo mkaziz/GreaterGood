@@ -1,4 +1,4 @@
-package com.GreaterGood.BusinessObjects;
+package com.greatergood.BusinessObjects;
 
 public class Donation {
 
@@ -20,6 +20,22 @@ public class Donation {
 
         return donation;
 
+    }
+
+    public int getAmountInCents() {
+        return amountInCents;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public int getMasjidId() {
+        return masjidId;
     }
 
 }

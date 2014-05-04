@@ -14,8 +14,9 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Toast;
 
-import com.GreaterGood.BusinessObjects.Donation;
 import com.greatergood.R;
+import com.greatergood.BusinessObjects.Donation;
+import com.greatergood.services.DonationService;
 
 public class DonationFragment extends Fragment {
 
@@ -71,9 +72,11 @@ public class DonationFragment extends Fragment {
                 Donation donation = Donation.CreateDonation(
                         donationAmount * 100, 1, 1);
 
+                DonationService.SaveDonation(donation);
+
                 Toast.makeText(getActivity(),
                         "Donated: $" + Integer.toString(donationAmount),
-                        Toast.LENGTH_LONG).show();
+                        Toast.LENGTH_SHORT).show();
             }
 
         });
