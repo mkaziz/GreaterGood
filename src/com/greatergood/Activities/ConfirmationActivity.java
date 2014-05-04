@@ -4,9 +4,9 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.view.Menu;
 
-import com.greatergood.Fragments.DonationFragment;
+import com.greatergood.Fragments.ConfirmationFragment;
 
-public class DonationActivity extends SingleFragmentActivity {
+public class ConfirmationActivity extends SingleFragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class DonationActivity extends SingleFragmentActivity {
     @Override
     protected Fragment createFragment() {
         // TODO Auto-generated method stub
-        return DonationFragment.createInstance();
+        return new ConfirmationFragment();
     }
 
 }
