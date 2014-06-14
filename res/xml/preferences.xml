@@ -1,17 +1,28 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory
-      android:title="Category">
-      <Preference
-          android:key="pref_sync"
+      android:title="Account">
+      <PreferenceScreen
+          android:key="pref_sign_in"
           android:title="Sign in"
-          android:summary="true"
-          android:defaultValue="true" />
+          android:summary="true" > 
+            <intent 
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.greatergood.activities"
+                android:targetClass="com.greatergood.activities.signinactivity"/>
+      </PreferenceScreen>
       
       <Preference
           android:key="pref_sync"
-          android:title="Add Credit Card"
-          android:summary="true"
-          android:defaultValue="true" />
+          android:title="Sign out"
+          android:enabled="false"
+          android:shouldDisableView="true" />
+      
+    </PreferenceCategory>
+    <PreferenceCategory
+      android:title="Payment">
+      <Preference
+          android:key="pref_credit_card"
+          android:title="Credit Card" />
       
     </PreferenceCategory>
 </PreferenceScreen> 

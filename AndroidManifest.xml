@@ -14,6 +14,8 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <meta-data android:name="com.google.android.gms.version" 
+            android:value="@integer/google_play_services_version" />
         <activity
             android:name="com.greatergood.MainActivity"
             android:label="@string/app_name" >
@@ -44,6 +46,11 @@
             android:name="com.greatergood.Activities.ConfirmationActivity"
             android:label="@string/title_activity_confirmation" >
         </activity>
+        
+        <activity
+            android:name="com.greatergood.Activities.SignInActivity"
+            android:label="@string/title_activity_sign_in" >
+        </activity>
         <activity
             android:name="com.greatergood.Activities.PreferencesActivity"
             android:label="@string/title_activity_preferences"  >
@@ -63,5 +70,9 @@
     <uses-feature android:name="android.hardware.camera" android:required="false" />
     <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
     <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+    <!-- Google+ -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    
 
 </manifest>
