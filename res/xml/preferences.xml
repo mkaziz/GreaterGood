@@ -3,12 +3,11 @@
       android:title="Account">
       <PreferenceScreen
           android:key="pref_sign_in"
-          android:title="Sign in"
-          android:summary="true" > 
+          android:title="Sign in" > 
             <intent 
                 android:action="android.intent.action.VIEW"
                 android:targetPackage="com.greatergood.activities"
-                android:targetClass="com.greatergood.activities.signinactivity"/>
+                android:targetClass=".SignInActivity"/>
       </PreferenceScreen>
       
       <Preference
