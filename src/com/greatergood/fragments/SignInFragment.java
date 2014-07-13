@@ -67,7 +67,7 @@ public class SignInFragment extends BaseFragment implements OnClickListener,
         btnSignIn.setOnClickListener(this);
 
         mGoogleApiClientManger = GoogleApiClientManager.get(this.getActivity(),
-                this);
+                this, this);
 
         return super.onCreateView(inflater, container, savedInstanceState);
     }

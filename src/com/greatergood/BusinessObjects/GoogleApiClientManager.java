@@ -8,15 +8,15 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 import com.google.android.gms.plus.Plus;
-import com.greatergood.fragments.SignInFragment;
 
 public class GoogleApiClientManager implements ConnectionCallbacks,
         OnConnectionFailedListener {
     private GoogleApiClient mGoogleApiClient;
 
-    public static GoogleApiClientManager get(Context c, SignInFragment f) {
+    public static GoogleApiClientManager get(Context c, ConnectionCallbacks cc,
+            OnConnectionFailedListener cfl) {
         GoogleApiClientManager gacm = new GoogleApiClientManager();
-        gacm.load(c, f);
+        gacm.load(c, cc, cfl);
         return gacm;
     }
 
@@ -62,12 +62,12 @@ public class GoogleApiClientManager implements ConnectionCallbacks,
         // }
     }
 
-    private void load(Context c, SignInFragment f) {
+    private void load(Context c, ConnectionCallbacks cc,
+            OnConnectionFailedListener cfl) { // , SignInFragment
+        // f) {
         mGoogleApiClient = new GoogleApiClient.Builder(c)
-                .addConnectionCallbacks(f).addOnConnectionFailedListener(f)
+                .addConnectionCallbacks(cc).addOnConnectionFailedListener(cfl)
                 .addApi(Plus.API).addScope(Plus.SCOPE_PLUS_PROFILE).build();
-        // .addOnConnectionFailedListener(this).addApi(Plus.API)
-        // .addScope(Plus.SCOPE_PLUS_PROFILE).build();
         // mContext = c;
     }
 }

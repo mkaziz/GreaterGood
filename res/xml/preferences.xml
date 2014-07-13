@@ -1,20 +1,10 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory
       android:title="Account">
-      <PreferenceScreen
-          android:key="pref_sign_in"
-          android:title="Sign in" > 
-            <intent 
-                android:action="android.intent.action.VIEW"
-                android:targetPackage="com.greatergood.activities"
-                android:targetClass=".SignInActivity"/>
-      </PreferenceScreen>
-      
       <Preference
-          android:key="pref_sync"
-          android:title="Sign out"
-          android:enabled="false"
-          android:shouldDisableView="true" />
+          android:key="pref_sign_in"
+          android:title="Sign in" />
+      
       
     </PreferenceCategory>
     <PreferenceCategory

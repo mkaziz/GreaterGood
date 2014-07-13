@@ -3,7 +3,7 @@ package com.greatergood.activities;
 import android.app.Fragment;
 import android.os.Bundle;
 
-import com.greatergood.fragments.SignInFragment;
+import com.greatergood.fragments.PreferencesFragment;
 
 public class PreferencesActivity extends SingleFragmentActivity {
 
@@ -15,7 +15,7 @@ public class PreferencesActivity extends SingleFragmentActivity {
     @Override
     protected Fragment createFragment() {
         // TODO Auto-generated method stub
-        return new SignInFragment();
+        return new PreferencesFragment();
     }
 
 }
